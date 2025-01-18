@@ -23,12 +23,32 @@ namespace arrayofjsonrabbitmq
                     autoDelete: false,
                     arguments: null);
 
-                var message = new Dictionary<string, string>
-                {
-                    { "Name" , "Ravi"},
-                    { "Native","Coimbatore"},
-                    { "year","2010"}
-                };
+                var message = new List<Dictionary<string, string>>
+               {
+                   new Dictionary<string, string>
+                   {
+                       {"Name","Siva" },
+                       {"City","Chennai" },
+                       {"year","2004"}
+                       
+                   },
+                   new Dictionary<string, string>
+                   {
+                       {"Name","Shankar" },
+                       {"City","Erode" },
+                       {"year","2001"}
+
+                   },
+                   new Dictionary<string, string>
+                   {
+                       {"Name","Siva" },
+                       {"City","Namakkal" },
+                       {"year","2005"}
+
+                   }
+
+               };
+
 
                 string jsonmessage = JsonConvert.SerializeObject(message);
                 var body = Encoding.UTF8.GetBytes(jsonmessage);
